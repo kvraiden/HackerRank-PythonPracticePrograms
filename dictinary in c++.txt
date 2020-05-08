@@ -1,0 +1,38 @@
+#include <cmath>
+#include <cstdio>
+#include <vector>
+#include <iostream>
+#include <algorithm>
+#include <map>
+using namespace std;
+
+
+int main() 
+{
+    int n,i;
+    string name;
+    long num;
+    map<string,long> pbook;
+    cin>>n;
+    for(i=0;i<n;i++)
+    {
+        cin>>name;
+        cin>>num;
+        pbook[name] = num;
+    }
+    
+    while(cin>>name)
+    {
+        if(pbook.find(name)!=pbook.end())
+        {
+            cout<<name<<"="<<pbook.find(name)->second<<endl;
+        }
+        else
+        {
+            cout<<"Not found\n";
+        }
+    }
+
+    
+    return 0;
+}
